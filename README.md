@@ -1,1 +1,1 @@
-# WordPressGenerator
+# HispaMiddle
