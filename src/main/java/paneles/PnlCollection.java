@@ -32,6 +32,7 @@ import com.textField.simple.PasswordField;
 import com.textField.simple.TextField;
 
 import radio_button.RadioButtonCustom;
+import utils.Metodos;
 
 public class PnlCollection extends javax.swing.JPanel {
 
@@ -67,7 +68,7 @@ public class PnlCollection extends javax.swing.JPanel {
 
 	private PasswordField passAcceso;
 
-	WebDriver driver;
+	private WebDriver driver;
 
 	private SimpleButton btnNewButton_1;
 
@@ -79,23 +80,23 @@ public class PnlCollection extends javax.swing.JPanel {
 
 	private void limpiar() {
 
-		limpiarTextos(url);
+		Metodos.limpiarTextos(url);
 
-		limpiarTextos(bd);
+		Metodos.limpiarTextos(bd);
 
-		limpiarTextos(usuario);
+		Metodos.limpiarTextos(usuario);
 
 		pass.setText(pass.getText().trim());
 
-		limpiarTextos(servidor);
+		Metodos.limpiarTextos(servidor);
 
-		limpiarTextos(prefix);
+		Metodos.limpiarTextos(prefix);
 
-		limpiarTextos(sitio);
+		Metodos.limpiarTextos(sitio);
 
-		limpiarTextos(nombreUsuario);
+		Metodos.limpiarTextos(nombreUsuario);
 
-		limpiarTextos(email);
+		Metodos.limpiarTextos(email);
 
 		passAcceso.setText(passAcceso.getText().trim());
 
@@ -123,13 +124,6 @@ public class PnlCollection extends javax.swing.JPanel {
 
 		}
 
-	}
-
-	private void limpiarTextos(TextField input) {
-
-		input.setText(input.getText().trim());
-
-		input.setText(input.getText().replace("  ", " "));
 	}
 
 	@SuppressWarnings("unchecked")
@@ -226,6 +220,10 @@ public class PnlCollection extends javax.swing.JPanel {
 
 					limpiar();
 
+					Metodos.insertar(servidor.getText(), bd.getText(), usuario.getText(), pass.getText(),
+							prefix.getText(), sitio.getText(), "", url.getText(), nombreUsuario.getText(),
+							passAcceso.getText(), email.getText());
+
 					if (chrome.isSelected()) {
 
 						System.setProperty("webdriver.chrome.driver",
@@ -321,7 +319,7 @@ public class PnlCollection extends javax.swing.JPanel {
 				}
 
 				catch (Exception e1) {
-					e1.printStackTrace();
+
 				}
 
 			}
@@ -649,5 +647,7 @@ public class PnlCollection extends javax.swing.JPanel {
 										GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
 						.addGap(148)));
 		this.setLayout(layout);
-	}// </editor-fold>//GEN-END:initComponents
+		
+	}
+	
 }
