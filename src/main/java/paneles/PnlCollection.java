@@ -159,7 +159,7 @@ public class PnlCollection extends javax.swing.JPanel {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
-		lblNombreDeUsuario = new JLabel("Nombre de usuario");
+		lblNombreDeUsuario = new JLabel("Nombre de usuario de la base de datos");
 		lblNombreDeUsuario.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNombreDeUsuario.setFont(new Font("Tahoma", Font.PLAIN, 20));
 
@@ -647,7 +647,7 @@ public class PnlCollection extends javax.swing.JPanel {
 										GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
 						.addGap(148)));
 		this.setLayout(layout);
-		
+
 	}
-	
+
 }

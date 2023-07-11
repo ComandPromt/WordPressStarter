@@ -23,14 +23,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="target/generated-sources/annotations">
-		<attributes>
-			<attribute name="ignore_optional_problems" value="true"/>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="m2e-apt" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="src/main/java/libs/NefAnimacion_V2.1_jdk18.jar"/>
 	<classpathentry kind="lib" path="src/main/java/libs/swingx-1.6.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Yeah/Desktop/lib_material_swing.jar"/>
@@ -41,12 +33,14 @@
 	<classpathentry kind="lib" path="src/main/java/libs/about.jar"/>
 	<classpathentry kind="lib" path="src/main/java/libs/lib_material_swing.jar"/>
 	<classpathentry kind="lib" path="src/main/java/libs/commons-io-1.3.2.jar"/>
+	<classpathentry kind="src" path="target/generated-sources/annotations">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
 		<attributes>
 			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="ignore_optional_problems" value="true"/>
-			<attribute name="m2e-apt" value="true"/>
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>

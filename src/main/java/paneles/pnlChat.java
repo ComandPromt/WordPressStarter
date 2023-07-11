@@ -1,6 +1,7 @@
 
 package paneles;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -96,7 +97,7 @@ public class pnlChat extends javax.swing.JPanel {
 				}
 
 				catch (Exception e1) {
-
+					e1.printStackTrace();
 				}
 
 			}
@@ -120,7 +121,9 @@ public class pnlChat extends javax.swing.JPanel {
 		chrome = new RadioButtonCustom("Chrome");
 
 		firefox.addMouseListener(new MouseAdapter() {
+
 			@Override
+
 			public void mouseReleased(MouseEvent e) {
 
 				if (firefox.isSelected()) {
@@ -148,7 +151,9 @@ public class pnlChat extends javax.swing.JPanel {
 		});
 
 		chrome.addMouseListener(new MouseAdapter() {
+
 			@Override
+
 			public void mouseReleased(MouseEvent e) {
 
 				if (firefox.isSelected()) {
@@ -170,16 +175,38 @@ public class pnlChat extends javax.swing.JPanel {
 					firefox.setSelected(false);
 
 				}
+
 			}
+
 		});
+
 		chrome.setSelected(true);
+
 		chrome.setFont(new Font("Tahoma", Font.PLAIN, 16));
 
 		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setIcon(new ImageIcon(pnlChat.class.getResource("/img/firefox.png")));
 
 		firefox.setText("Firefox");
+
 		firefox.setFont(new Font("Tahoma", Font.PLAIN, 16));
+
+		SimpleButton btnNewButton_1 = new SimpleButton("Refrescar");
+		btnNewButton_1.setBorderColor(Color.WHITE);
+		btnNewButton_1.setIcon(new ImageIcon(pnlChat.class.getResource("/img/actualizar.png")));
+
+		btnNewButton_1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				Metodos.verWebs(web);
+
+			}
+
+		});
+
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
 		layout.setHorizontalGroup(layout.createParallelGroup(Alignment.LEADING).addGroup(layout.createSequentialGroup()
@@ -189,15 +216,23 @@ public class pnlChat extends javax.swing.JPanel {
 						.addComponent(chrome, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE).addGap(33)
 						.addComponent(lblNewLabel_2, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
 						.addGap(6).addComponent(firefox, GroupLayout.PREFERRED_SIZE, 91, GroupLayout.PREFERRED_SIZE))
-						.addGroup(layout.createSequentialGroup().addGap(171)
+						.addGroup(layout.createSequentialGroup().addGap(64)
+								.addComponent(btnNewButton_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addGap(18)
 								.addGroup(layout.createParallelGroup(Alignment.LEADING)
 										.addComponent(btnNewButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 439,
 												Short.MAX_VALUE)
 										.addComponent(web, GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE))))
-				.addContainerGap(251, Short.MAX_VALUE)));
+				.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 		layout.setVerticalGroup(layout.createParallelGroup(Alignment.LEADING)
 				.addGroup(layout.createSequentialGroup().addGap(109)
-						.addComponent(web, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE).addGap(28)
+						.addGroup(layout.createParallelGroup(Alignment.BASELINE)
+								.addComponent(web, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+								.addComponent(
+										btnNewButton_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE))
+						.addGap(28)
 						.addGroup(layout.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
 								.addComponent(chrome, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
@@ -206,7 +241,7 @@ public class pnlChat extends javax.swing.JPanel {
 										GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)))
 						.addGap(30)
 						.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(152, Short.MAX_VALUE)));
+						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
 		this.setLayout(layout);
 

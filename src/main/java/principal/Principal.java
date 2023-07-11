@@ -6,6 +6,7 @@ import java.awt.Insets;
 import java.awt.MouseInfo;
 import java.awt.Point;
 import java.awt.Toolkit;
+import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -27,7 +28,18 @@ public class Principal extends javax.swing.JFrame {
 
 	public Principal() {
 
+		try {
+
+			new File(new File(".").getCanonicalPath() + "\\screenshots").mkdir();
+
+		}
+
+		catch (Exception e) {
+
+		}
+
 		setTitle("WordPress Starter");
+
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Principal.class.getResource("/img/wordpress.png")));
 
 		initComponents();

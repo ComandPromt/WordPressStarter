@@ -176,6 +176,8 @@ public abstract class Metodos {
 
 		try {
 
+			web.removeAllItems();
+
 			conexionBD();
 
 			String consulta = "SELECT NOMBRE FROM WEBS";
